@@ -1,0 +1,7 @@
+videos/
+mock-up/
+logo/
+.git/
+__pycache__/
+*.pyc
+*.md

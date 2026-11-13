@@ -1,0 +1,26 @@
+# docker-compose.yml — Video Streaming Site
+#
+# Uso:
+#   docker compose up --build    → construye la imagen y arranca el servicio
+#   docker compose up -d         → arranca en segundo plano
+#   docker compose down          → detiene y elimina los contenedores
+#
+# El sitio queda accesible en http://localhost:5000
+
+services:
+  web:
+    # Construye la imagen desde el Dockerfile en el directorio actual
+    build: .
+
+    # Mapea el puerto 5000 del contenedor al puerto 5000 del host
+    ports:
+      - "5000:5000"
+
+    # Monta las carpetas locales como volúmenes dentro del contenedor.
+    # Esto permite agregar o quitar videos/logo sin reconstruir la imagen.
+    volumes:
+      - ./videos:/app/videos   # carpeta de videos en el host → /app/videos en el contenedor
+      - ./logo:/app/logo       # carpeta del logo en el host  → /app/logo en el contenedor
+
+    # Reinicia el contenedor automáticamente salvo que se detenga de forma explícita
+    restart: unless-stopped

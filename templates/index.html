@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoSite</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="header" role="banner">
+    <img src="/static/logo/logo.jpeg" alt="Logo" id="header-logo">
+  </header>
+
+  <div id="layout">
+    <aside id="sidebar" aria-label="Lista de videos">
+      <p id="videos-label">VIDEOS</p>
+      <ul id="video-list" role="list" aria-label="Videos disponibles"></ul>
+    </aside>
+
+    <main id="main" role="main" aria-label="Reproductor de video">
+      <img
+        id="placeholder"
+        src="/static/logo/logo.jpeg"
+        alt="Selecciona un video para reproducir"
+        aria-label="Placeholder: selecciona un video del panel lateral"
+      >
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
